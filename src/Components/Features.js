@@ -1,13 +1,28 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FeatureItem } from './FeatureItem.js'
-const features = [['1', 'Feature 1'], ['2', 'Feature 2'], ['3', 'Feature 3']]
+
+const URL = 'https://jsonplaceholder.typicode.com/posts'
 
 export function Features() {
+
+
+  useEffect(() => {
+
+  }, [])
+
+  const fetchPosts = async () => {
+
+  }
+
   return (
-    <div>
-      {features.map(feature => {
-        return <FeatureItem key={feature[0]} num={feature[0]} title={feature[1]} />
-      })}
-    </div>
+    <div>{JSON.stringify()}</div>
   )
+
+  // return (
+  //   <div>
+  //     {features.map(feature => (
+  //       <FeatureItem key={feature[0]} num={feature[0]} title={feature[1]} />
+  //     ))}
+  //   </div>
+  // )
 }
