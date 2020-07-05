@@ -3,19 +3,21 @@ import { FeatureItem } from './FeatureItem.js'
 
 const URL = 'https://jsonplaceholder.typicode.com/posts'
 
-export function Features() {
-
+function Features() {
+  const [post, setPosts] = useState([])
 
   useEffect(() => {
-
+    fetchPosts()
   }, [])
 
   const fetchPosts = async () => {
-
+    const response = await fetch(URL)
+    const data = await response.json()
+    setPosts(data)
   }
 
   return (
-    <div>{JSON.stringify()}</div>
+    <div>{JSON.stringify(posts)}</div>
   )
 
   // return (
@@ -26,3 +28,5 @@ export function Features() {
   //   </div>
   // )
 }
+
+export default Features
